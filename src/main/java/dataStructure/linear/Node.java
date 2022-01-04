@@ -23,6 +23,14 @@ public class Node<T> {
         this.next = next;
     }
 
+    public Node getPre() {
+        return pre;
+    }
+
+    public void setPre(Node pre) {
+        this.pre = pre;
+    }
+
     public Node getNext() {
         return next;
     }

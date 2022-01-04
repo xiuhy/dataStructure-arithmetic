@@ -4,8 +4,6 @@ package dataStructure.linear;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.Date;
-
 public class SequenceArrayTest  {
 
     LinkedList<String> sequenceArray;
@@ -59,13 +57,5 @@ public class SequenceArrayTest  {
         for (String s : this.sequenceArray) {
             System.out.println(s);
         }
-    }
-
-    @Test
-    public void testToken(){
-        Date now=new Date();
-        double x = (double) (2 << 16 >> 8) / (2 << 8) * 1000;
-        String validationCode = String.valueOf(Math.cos("2021-12-03".hashCode()) * x);
-        System.out.println(validationCode);
     }
 }

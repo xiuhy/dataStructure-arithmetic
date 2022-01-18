@@ -2,7 +2,7 @@ package dataStructure.stack;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import java.util.Stack;
 
 public class LinkStackTest {
 
@@ -29,6 +29,18 @@ public class LinkStackTest {
         System.out.println("pop:"+linkStack.pop());
         System.out.println("pop:"+linkStack.pop());
         System.out.println("pop:"+linkStack.pop());
+    }
+
+    @Test
+    public void testStack(){
+
+        Stack<String> strings=new Stack<>();
+        strings.push("a");
+        strings.push("b");
+        strings.push("c");
+
+        System.out.println(strings.toString());
+        System.out.println("pop:"+strings.pop());
 
     }
 }

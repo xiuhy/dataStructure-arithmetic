@@ -23,6 +23,12 @@ public class Node<T> {
         this.next = next;
     }
 
+    public Node(Node<T> pre,T item, Node<T> next) {
+        this.pre=pre;
+        this.item = item;
+        this.next = next;
+    }
+
     public Node getPre() {
         return pre;
     }

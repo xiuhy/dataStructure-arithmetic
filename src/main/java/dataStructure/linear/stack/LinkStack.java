@@ -1,4 +1,4 @@
-package dataStructure.stack;
+package dataStructure.linear.stack;
 
 import dataStructure.linear.Node;
 

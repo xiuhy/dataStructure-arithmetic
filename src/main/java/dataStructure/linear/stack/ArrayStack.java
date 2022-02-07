@@ -1,7 +1,12 @@
 package dataStructure.stack;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Stack;
 import java.util.regex.Pattern;
+
+import static java.util.Optional.ofNullable;
 
 /**
  * 顺序数组存储方式实现栈
@@ -127,5 +132,62 @@ public class ArrayStack<T> implements Iterable {
             System.out.println("当前字符匹配无效");
             return false;
         }
+    }
+
+    /**
+     * 逆波兰表达式
+     * @author bigmoon
+     * @params [content]
+     * @return java.lang.Object
+     * @see [相关类/方法]（可选）
+     * @since
+     */
+    public static Object reversePolish(String[] content){
+        //逆波兰表达式解析，
+        // 1. 通过识别操作符向栈中获取前两个操作符，然后操作；
+        // 2. 在操作完成之后将结果集push到队列
+
+        Stack<String> stack=new Stack<>();
+        Integer result=0;
+
+        ofNullable(content).ifPresent(list->{
+            String operator1;
+            String operator2;
+            for (String s : list) {
+
+                Integer tmpResult=null;
+                switch (s){
+                    case "+":
+                        operator2= stack.pop();
+                        operator1= stack.pop();
+                        tmpResult=Integer.valueOf(operator1)+Integer.valueOf(operator2);
+                        break;
+                    case "-":
+                        operator2= stack.pop();
+                        operator1= stack.pop();
+                        tmpResult=Integer.valueOf(operator1)-Integer.valueOf(operator2);
+                        break;
+                    case "*":
+                        operator2= stack.pop();
+                        operator1= stack.pop();
+                        tmpResult=Integer.valueOf(operator1)*Integer.valueOf(operator2);
+                        break;
+                    case "/":
+                        operator2= stack.pop();
+                        operator1= stack.pop();
+                        tmpResult=Integer.valueOf(operator1)/Integer.valueOf(operator2);
+                        break;
+                    default:stack.push(s);
+                }
+
+                if(null!=tmpResult){
+                    stack.push(tmpResult.toString());
+                }
+            }
+        });
+        if(!stack.isEmpty()){
+            result=Integer.valueOf(stack.pop());
+        }
+        return result;
     }
 }

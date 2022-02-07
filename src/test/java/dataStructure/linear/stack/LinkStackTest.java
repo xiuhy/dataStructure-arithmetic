@@ -1,4 +1,4 @@
-package dataStructure.stack;
+package dataStructure.linear.stack;
 
 import org.testng.annotations.Test;
 

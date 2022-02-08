@@ -41,6 +41,21 @@ public class BinaryTreeTest {
         System.out.println(tree);
     }
 
+    @Test
+    public void testMin(){
+        String value=tree.min();
+        System.out.println(value);
+        assert "2".equals(value);
+    }
+
+    @Test
+    public void testMax(){
+        String value=tree.max();
+        System.out.println(value);
+        assert "26".equals(value);
+    }
+
+
     class SefNumber implements Comparable<SefNumber>{
 
        public Integer value;

@@ -129,6 +129,83 @@ public class BinaryTree<K extends Comparable<K>,V> {
         return node;
     }
 
+    public V min(){
+        return min(this.root).getValue();
+    }
+
+    /**
+     * 通过制定节点查询最小值
+     * @author bigmoon
+     * @params [node]
+     * @return dataStructure.tree.Node<K,V>
+     * @see [相关类/方法]（可选）
+     * @since
+     */
+    private Node<K,V> min(Node<K,V> node){
+
+        if (node == null) {
+            return null;
+        }
+
+        //A:通过递归方式实现
+//        if (node.getLeftNode() != null) {
+//            return min(node.getLeftNode());
+//        }else{
+//            return node;
+//        }
+
+        //region#B:通过循环实现
+        Node<K, V> node1 = node;
+
+        while (null!=node1.getLeftNode()){
+
+            if (node1.getLeftNode() != null) {
+                node1=node1.getLeftNode();
+            }else{
+                break;
+            }
+        }
+        return node1;
+
+    }
+
+    /**
+     * 获取最大节点值
+     * @author bigmoon
+     * @params []
+     * @return V
+     * @see [相关类/方法]（可选）
+     * @since
+     */
+    public V max(){
+        return max(root).getValue();
+    }
+
+    protected Node<K,V> max(Node<K,V> node){
+
+        if (node == null) {
+            return null;
+        }
+
+        //A 递归
+//        if (node.getRightNode() != null) {
+//            return max(node.getRightNode());
+//        }else{
+//            return node;
+//        }
+
+        //B 循环
+        Node<K, V> node1 = node;
+        while (null!=node1.getRightNode()){
+
+            if (node1.getRightNode() != null) {
+                node1=node1.getRightNode();
+            }else{
+                break;
+            }
+        }
+        return node1;
+    }
 
     @Override
     public String toString() {

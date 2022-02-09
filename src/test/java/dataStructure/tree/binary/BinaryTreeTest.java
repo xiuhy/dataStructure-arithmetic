@@ -3,6 +3,8 @@ package dataStructure.tree.binary;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Queue;
+
 public class BinaryTreeTest {
 
     BinaryTree<SefNumber,String> tree=new BinaryTree<SefNumber, String>();
@@ -53,6 +55,75 @@ public class BinaryTreeTest {
         String value=tree.max();
         System.out.println(value);
         assert "26".equals(value);
+    }
+
+    @Test
+    public void testPreErgodic(){
+
+        BinaryTree<Integer,String> variables=new BinaryTree<>();
+        variables.put(15,"15");
+        variables.put(10,"10");
+        variables.put(20,"20");
+        variables.put(4,"4");
+        variables.put(13,"13");
+        variables.put(8,"8");
+        variables.put(18,"18");
+        variables.put(29,"29");
+        variables.put(16,"16");
+
+        Queue<Integer> keyVariables=variables.preErgodic();
+        keyVariables.forEach(integer -> System.out.println(integer));
+
+    }
+
+    @Test
+    public void testMidErgodic(){
+
+        BinaryTree<Integer,String> variables=new BinaryTree<>();
+        variables.put(15,"15");
+        variables.put(10,"10");
+        variables.put(20,"20");
+        variables.put(4,"4");
+        variables.put(13,"13");
+        variables.put(8,"8");
+        variables.put(18,"18");
+        variables.put(29,"29");
+        variables.put(16,"16");
+        Queue<Integer> keyVariables=variables.midErgodic();
+        keyVariables.forEach(integer -> System.out.println(integer));
+    }
+
+    @Test
+    public void testAfterErgodic(){
+
+        BinaryTree<Integer,String> variables=new BinaryTree<>();
+        variables.put(15,"15");
+        variables.put(10,"10");
+        variables.put(20,"20");
+        variables.put(4,"4");
+        variables.put(13,"13");
+        variables.put(8,"8");
+        variables.put(18,"18");
+        variables.put(29,"29");
+        variables.put(16,"16");
+        Queue<Integer> keyVariables=variables.afterErgodic();
+        keyVariables.forEach(integer -> System.out.println(integer));
+    }
+
+    @Test
+    public void testLayerErgodic(){
+        BinaryTree<Integer,String> variables=new BinaryTree<>();
+        variables.put(15,"15");
+        variables.put(10,"10");
+        variables.put(20,"20");
+        variables.put(4,"4");
+        variables.put(13,"13");
+        variables.put(8,"8");
+        variables.put(18,"18");
+        variables.put(29,"29");
+        variables.put(16,"16");
+        Queue<Integer> keyVariables=variables.layerErgodic();
+        keyVariables.forEach(integer -> System.out.println(integer));
     }
 
 

@@ -126,6 +126,21 @@ public class BinaryTreeTest {
         keyVariables.forEach(integer -> System.out.println(integer));
     }
 
+    @Test
+    public void testMaxDeep(){
+        BinaryTree<Integer,String> variables=new BinaryTree<>();
+        variables.put(15,"15");
+        variables.put(10,"10");
+        variables.put(20,"20");
+        variables.put(4,"4");
+        variables.put(13,"13");
+        variables.put(8,"8");
+        variables.put(18,"18");
+        variables.put(29,"29");
+        variables.put(16,"16");
+        System.out.println(variables.maxDeep());
+    }
+
 
     class SefNumber implements Comparable<SefNumber>{
 

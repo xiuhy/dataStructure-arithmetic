@@ -343,6 +343,30 @@ public class BinaryTree<K extends Comparable<K>, V> {
         return kQueue;
     }
 
+    public int maxDeep(){
+        return maxDeep(this.root);
+    }
+
+    public int maxDeep(Node node){
+
+        if (node == null) {
+            return  0;
+        }
+        int max=0,maxl=0,maxr=0;
+
+        if (node.getLeftNode() != null) {
+            maxl=maxDeep(node.getLeftNode());
+        }
+        if (node.getRightNode() != null) {
+            maxr=maxDeep(node.getRightNode());
+        }
+
+
+
+        max=maxl>maxr?maxl:maxr;
+        return max+1;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", BinaryTree.class.getSimpleName() + "[", "]")

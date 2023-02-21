@@ -125,7 +125,8 @@ public class TwoWayLinkedList<T> implements Iterable<T> {
             this.last=removeNode.pre;
             return removeNode.item;
         }else{
-           tmp.pre=tmp.next;
+           tmp.pre.next=tmp.next;
+           tmp.next.pre=tmp.pre;
            this.cnt--;
            return tmp.item;
         }
@@ -200,6 +201,11 @@ public class TwoWayLinkedList<T> implements Iterable<T> {
             T value= this.domainHead.item;
             this.domainHead=this.domainHead.next;
             return value;
+        }
+
+        @Override
+        public void remove() {
+
         }
     }
 }
